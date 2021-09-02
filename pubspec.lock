@@ -67,9 +67,11 @@ packages:
   esc_pos_utils:
     dependency: "direct main"
     description:
-      path: "../esc_pos_utils"
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: be49f817fa0b0d91e411308455fd5f2995327c8a
+      url: "https://github.com/ultamatum/esc_pos_utils.git"
+    source: git
     version: "1.0.0"
   fake_async:
     dependency: transitive
@@ -86,9 +88,11 @@ packages:
   flutter_bluetooth_basic:
     dependency: "direct main"
     description:
-      path: "../flutter_bluetooth_basic"
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "776357dfb2a6719a486deda165e6a5ea0b65271a"
+      url: "https://github.com/ultamatum/flutter_bluetooth_basic.git"
+    source: git
     version: "0.1.5"
   flutter_test:
     dependency: "direct dev"
