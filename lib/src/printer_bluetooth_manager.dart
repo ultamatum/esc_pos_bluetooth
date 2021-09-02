@@ -18,9 +18,9 @@ class PrinterBluetooth {
   PrinterBluetooth(this._device);
   final BluetoothDevice _device;
 
-  String get name => _device.name;
-  String get address => _device.address;
-  int get type => _device.type;
+  String? get name => _device.name;
+  String? get address => _device.address;
+  int? get type => _device.type;
 }
 
 /// Printer Bluetooth Manager
@@ -28,9 +28,9 @@ class PrinterBluetoothManager {
   final BluetoothManager _bluetoothManager = BluetoothManager.instance;
   bool _isPrinting = false;
   bool _isConnected = false;
-  StreamSubscription _scanResultsSubscription;
-  StreamSubscription _isScanningSubscription;
-  PrinterBluetooth _selectedPrinter;
+  late StreamSubscription _scanResultsSubscription;
+  late StreamSubscription _isScanningSubscription;
+  PrinterBluetooth? _selectedPrinter;
 
   final BehaviorSubject<bool> _isScanning = BehaviorSubject.seeded(false);
   Stream<bool> get isScanningStream => _isScanning.stream;
@@ -94,7 +94,7 @@ class PrinterBluetoothManager {
     await _bluetoothManager.stopScan();
 
     // Connect
-    await _bluetoothManager.connect(_selectedPrinter._device);
+    await _bluetoothManager.connect(_selectedPrinter!._device);
 
     // Subscribe to the events
     _bluetoothManager.state.listen((state) async {
